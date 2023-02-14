@@ -1,12 +1,12 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import EventCard from '@/components/EventCard.vue'
-import EventService from '@/services/EventService.js'
+import EventServices from '@/services/EventServices.js'
 
 const events = ref(null)
 
 onMounted(() => {
-  EventService.getEvents()
+  EventServices.getEvents()
     .then((response) => {
       events.value = response.data
     })

@@ -3,7 +3,7 @@ import EventListView from '../views/EventListView.vue'
 import AboutView from '../views/AboutView.vue'
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHistory(process.env.BASE_URL),
   routes: [
     {
       path: '/',
@@ -15,6 +15,12 @@ const router = createRouter({
       name: 'about',
       component: AboutView,
     },
+    {
+      props: true,
+      path: '/event/:id',
+      name: 'event-details',
+      component: EventViewDetails
+    }
   ],
 })
 
